@@ -13,21 +13,38 @@ const Header = () => {
     const { user, logOut } = useAuth();
     
     return (
-        <div className='header d-flex justify-content-between p-3 mx-5'>
-            <NavLink className={navColor} id="logo" to="/home">City Ride</NavLink>
-            <nav>
-                <NavLink className={navColor} to="/home">Home</NavLink>
-                <NavLink className={navColor} to="/contact">Contact</NavLink>
-                <NavLink className={navColor} to="/blog">Blog</NavLink>
-                <NavLink className={navColor} to="/map">Map</NavLink>
-                <span>{ user.displayName } </span>
-                {
-                    user.email ?
-                        <button className='btn btn-outline-dark log-out-btn' onClick={logOut}>LogOut</button>
-                    :
-                    <NavLink className={navColor} to="/login">Login</NavLink>}
-            </nav>
-        </div>
+      <div className="header d-flex justify-content-between p-3 mx-5">
+        <NavLink className={navColor} id="logo" to="/home">
+          City Ride
+        </NavLink>
+        <nav>
+          <NavLink className={navColor} to="/home">
+            Home
+          </NavLink>
+          <NavLink className={navColor} to="/contact">
+            Contact
+          </NavLink>
+          <NavLink className={navColor} to="/blog">
+            Blog
+          </NavLink>
+          <NavLink className={navColor} to="/map">
+            Map
+          </NavLink>
+          <span>{user.email} </span>
+          {user.email ? (
+            <button
+              className="btn btn-outline-dark log-out-btn"
+              onClick={logOut}
+            >
+              LogOut
+            </button>
+          ) : (
+            <NavLink className={navColor} to="/login">
+              Login
+            </NavLink>
+          )}
+        </nav>
+      </div>
     );
 };
 
