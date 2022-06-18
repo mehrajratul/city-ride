@@ -11,7 +11,6 @@ import NotFound from './Components/NotFound/NotFound';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Register from './Components/Register/Register';
 import AuthProvider from './context/AuthProvider'
-
 function App() {
   return (
     <div style={{backgroundImage:`url("https://ibb.co/p2kQ7xm")`}} className="App">
@@ -43,7 +42,7 @@ function App() {
                 <NotFound></NotFound>
               </Route>
             </Switch>
-        </BrowserRouter>
+          </BrowserRouter>
       </AuthProvider>
     </div>
   );
